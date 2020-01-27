@@ -10,13 +10,13 @@
     Example:
         from time import sleep
         tunnel_info = [
-            {"ssh_address_or_host": "bastion",
-            "ssh_username": "pdb_query",
-            "ssh_pkey": "~/.ssh/id_rsa",
+            {"ssh_address_or_host": "bastion1",
+            "ssh_username": "sshuser",
+            "ssh_pkey": "~/.ssh/id_rsa", # Note this refers to a local file on the machine that runs logic
             },
-            {"ssh_address_or_host": "destination",
-            "ssh_username": "pdb_query",
-            "ssh_pkey": "~/.ssh/id_rsa",
+            {"ssh_address_or_host": "bastion2",
+            "ssh_username": "sshuser",
+            "ssh_password": "somesecurepassword",
             }
         ]
         with TunnelNetwork(tunnel_info, target_ip="127.0.0.1", target_port=8080) as tn:
