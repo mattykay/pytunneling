@@ -35,6 +35,7 @@ tunnel_info = [
     {"ssh_address_or_host": "bastion1",
     "ssh_username": "sshuser",
     "ssh_pkey": "~/.ssh/id_rsa", # Note this refers to a local file on the machine that runs logic
+    #"ssh_private_key_password ": "somekeypassword", # If applicable
     },
     {"ssh_address_or_host": "bastion2",
     "ssh_username": "sshuser",
@@ -42,7 +43,7 @@ tunnel_info = [
     }
 ]
 with TunnelNetwork(tunnel_info=tunnel_info, target_ip="database", target_port=5432) as tn:
-    print(tn.get_local_connect_port())
+    print(f"Tunnel available at localhost:{tn.local_bind_port}")
     while True:
         # Use this tunnel
         sleep(5)

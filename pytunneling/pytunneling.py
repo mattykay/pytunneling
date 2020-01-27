@@ -6,23 +6,6 @@
     Sets up SSH tunnel(s) that can be used to forward ports for use through firewalled environments. It
      assumes input tunnel info is accurate otherwise will fail/exit (note: in particular any SSH keys must
      exist on source server, also be sure to check SSH connectivity and no first time SSH thumbprint prompts)
-
-    Example:
-        from time import sleep
-        tunnel_info = [
-            {"ssh_address_or_host": "bastion1",
-            "ssh_username": "sshuser",
-            "ssh_pkey": "~/.ssh/id_rsa", # Note this refers to a local file on the machine that runs logic
-            },
-            {"ssh_address_or_host": "bastion2",
-            "ssh_username": "sshuser",
-            "ssh_password": "somesecurepassword",
-            }
-        ]
-        with TunnelNetwork(tunnel_info, target_ip="127.0.0.1", target_port=8080) as tn:
-            print(tn.get_local_connect_port())
-            while True:
-                sleep(5)
 """
 
 from sshtunnel import SSHTunnelForwarder
