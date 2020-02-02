@@ -2,13 +2,11 @@
 # -*- coding: utf-8 -*-
 """
 Usage:
-    pytunneling.py <method> [--zabbix-server=ZABBIX_SERVER] [--zabbix-user=ZABBIX_USER]
-            [--zabbix-password=ZABBIX_PASSWORD] [--ignore-ssl-verify] [(-v | --verbose)] [<args> ...]
+    pytunneling.py [(-v | --verbose)] [<args> ...]
     pytunneling.py (-h | --help)
     pytunneling.py --version
 
 Arguments:
-  method        either Zabbix API reference as '<object>.<action>' or GraphImage API as 'graphimage.<search_type>' (e.g. 'host.get' or 'graphimage.graph_id')
   args          what arguments to pass to API call
 
 Options:
